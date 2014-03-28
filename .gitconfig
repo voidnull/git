@@ -1,0 +1,40 @@
+[alias]
+       	unpushed = log --stat @{u}..
+	unpushedall = log --stat origin/master..HEAD
+	# commits in short form
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	# commits showing changed files
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	# oneline commits showing dates
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	#oneline commits showing relative dates
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	oneline = log --oneline --decorate
+
+	who = shortlog -n -s --no-merges
+
+	# modified files in last commit
+	lastmod = "!git ll -1"
+
+	# list aliases
+	alias = "!git config -l | grep alias | cut -c 7-"
+
+	# other
+	co = checkout
+	st = status -s
+	ci = commit
+
+	# stash
+	sl = stash list
+
+	# tags
+	lasttag = describe --tags --abbrev=0
+
+[merge]
+       	tool = vimdiff
+[core]
+      	excludesfile = /home/premkumar/.gitignore
+[master]
+        autosetuprebase = always
+[push]
+      	default = simple
