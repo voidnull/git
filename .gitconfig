@@ -32,8 +32,6 @@
 
 [merge]
        	tool = vimdiff
-[core]
-      	excludesfile = /home/premkumar/.gitignore
 [master]
         autosetuprebase = always
 [push]
