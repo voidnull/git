@@ -29,10 +29,19 @@
 
 	# tags
 	lasttag = describe --tags --abbrev=0
+	
+	l = "!git ls -10"
+
+        undo-last-commit="!echo '>>> reverting commit'; \
+                         git ls -1; git reset HEAD~1; \
+                         echo '>>> current last commit'; \
+                         git ls -1"
 
 [merge]
        	tool = vimdiff
 [master]
         autosetuprebase = always
 [push]
-      	default = simple
+      	default = current
+[log]
+      	follow = true
